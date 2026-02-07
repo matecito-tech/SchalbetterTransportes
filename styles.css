@@ -424,3 +424,22 @@ body {
     width: 100%;
     display: block;
 }
+
+/* Footer Styles */
+.main-footer {
+    padding: 20px 0;
+    text-align: center;
+    background-color: transparent;
+    margin-top: 40px;
+}
+
+.footer-text {
+    background-color: #1a237e;
+    /* Azul corporativo */
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
