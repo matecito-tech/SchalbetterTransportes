@@ -4,12 +4,20 @@ html {
     /* Altura de la navbar para que los links no queden tapados */
 }
 
-/* Configuración General */
+:root {
+    --brand-blue: #0d1245;
+    --brand-orange: #c76718;
+    --brand-blue-light: #1a237e;
+    --text-white: #ffffff;
+    --font-main: 'Inter', sans-serif;
+    --font-heading: 'Outfit', sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-main);
 }
 
 body {
@@ -72,32 +80,40 @@ body {
     display: flex;
     height: 500px;
     background-color: #c76718;
-    /* Fondo azul oscuro */
     overflow: hidden;
 }
 
 .hero-image {
-    width: 45%;
-    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
-    overflow: hidden;
+    width: 40%;
+    background-color: #0d1245;
+    /* Azul oscuro corporativo */
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
 }
 
 .hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    object-fit: contain;
     transition: transform 0.6s ease;
+    display: block;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
 }
 
 .hero-image:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .hero-content {
-    width: 55%;
+    width: 60%;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 0 50px;
+    margin-left: -5%;
+    /* Overlap slightly with the clip-path */
 }
 
 .hero-text-wrapper {
@@ -114,28 +130,25 @@ body {
 }
 
 .hero-description {
-    color: white;
+    color: var(--text-white);
     font-size: 4rem;
     display: flex;
     flex-direction: column;
-    line-height: 1.5;
-    font-weight: bold;
+    line-height: 1;
+    font-weight: 800;
+    text-align: center;
+    font-family: var(--font-heading);
+    letter-spacing: -1px;
 }
 
 .hero-description .line {
     display: block;
 }
 
-.line1 {
-    margin-left: -20px;
-}
-
-.line2 {
-    margin-left: 50px;
-}
-
+.line1,
+.line2,
 .line3 {
-    margin-left: 100px;
+    margin-left: 0;
 }
 
 /* Sección Herramientas */
@@ -192,9 +205,9 @@ body {
 .logo-main {
     font-size: 26px;
     font-weight: 800;
-    color: #1a237e;
-    /* azul corporativo */
+    color: var(--brand-blue-light);
     letter-spacing: 1px;
+    font-family: var(--font-heading);
 }
 
 .logo-sub {
@@ -203,19 +216,27 @@ body {
     color: #555;
     letter-spacing: 4px;
     margin-top: 4px;
+    font-family: var(--font-main);
 }
 
 /* Sección Conocenos */
 .hero-image-branding {
     width: 45%;
-    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
     position: relative;
-    background: #000;
+    background: var(--brand-blue);
     overflow: hidden;
+    z-index: 2;
 }
 
 .hero-image-branding img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    /* Ensure subject is centered */
     transition: transform 0.6s ease;
+    display: block;
 }
 
 .hero-image-branding:hover img {
@@ -237,6 +258,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     position: absolute;
     top: 0;
     left: 0;
@@ -263,11 +285,12 @@ body {
 }
 
 .container-text h2 {
-    color: #1a237e;
+    color: var(--brand-blue-light);
     margin-bottom: 30px;
     font-size: 2.5rem;
     position: relative;
     display: inline-block;
+    font-family: var(--font-heading);
 }
 
 .container-text h2::after {
@@ -275,7 +298,7 @@ body {
     display: block;
     width: 60px;
     height: 4px;
-    background: #c76718;
+    background: var(--brand-orange);
     margin: 10px auto 0;
 }
 
@@ -340,13 +363,16 @@ body {
     justify-content: center;
     font-size: 3rem;
     color: #ccc;
+    overflow: hidden;
 }
 
 .service-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.6s ease;
+    display: block;
 }
 
 .service-card:hover .service-img img {
@@ -452,6 +478,9 @@ body {
 
 .careers-image img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     display: block;
     transition: transform 0.6s ease;
 }
