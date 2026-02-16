@@ -1,13 +1,29 @@
-/* Configuración General */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+    /* Altura de la navbar para que los links no queden tapados */
+}
+
+:root {
+    --brand-blue: #0d1245;
+    --brand-orange: #c76718;
+    --brand-blue-light: #1a237e;
+    --text-white: #ffffff;
+    --font-main: 'Inter', sans-serif;
+    --font-heading: 'Outfit', sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-main);
 }
 
 body {
     background-color: #f9f9f9;
+    padding-top: 85px;
+    /* Altura aproximada de la navbar */
 }
 
 /* Navegación */
@@ -18,8 +34,10 @@ body {
     padding: 10px 5%;
     background: white;
     border-bottom: 4px solid #1a237e;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
 }
 
@@ -58,30 +76,124 @@ body {
 }
 
 /* Sección Hero (Principal) */
+#inicio {
+    border-bottom: 30px solid #1a237e;
+}
+
+/* Sección Hero (Principal - Home Banner) */
+.home-banner {
+    display: flex;
+    height: 750px;
+    background-image: url('public/bannercamion.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(13, 18, 69, 0.7), rgba(13, 18, 69, 0.5));
+    z-index: 1;
+}
+
+.main-hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.main-hero-content h1 {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 900px;
+    line-height: 1.2;
+    font-family: var(--font-heading);
+}
+
+.cta-button {
+    background-color: var(--brand-orange);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(199, 103, 24, 0.4);
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    background-color: #a8520e;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(199, 103, 24, 0.6);
+}
+
+@media (max-width: 768px) {
+    .main-hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .home-banner {
+        height: 500px;
+    }
+}
+
+/* Original Hero Styles for Other Sections */
 .hero {
     display: flex;
     height: 500px;
     background-color: #c76718;
-    /* Fondo azul oscuro */
     overflow: hidden;
 }
 
 .hero-image {
-    width: 45%;
-    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+    width: 40%;
+    background-color: #0d1245;
+    /* Azul oscuro corporativo */
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
 }
 
 .hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    object-fit: contain;
+    transition: transform 0.6s ease;
+    display: block;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+}
+
+.hero-image:hover img {
+    transform: scale(1.05);
 }
 
 .hero-content {
-    width: 55%;
+    width: 60%;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 0 50px;
+    margin-left: -5%;
+    /* Overlap slightly with the clip-path */
 }
 
 .hero-text-wrapper {
@@ -98,40 +210,28 @@ body {
 }
 
 .hero-description {
-    color: white;
+    color: var(--text-white);
     font-size: 4rem;
     display: flex;
     flex-direction: column;
-    line-height: 1.5;
-    font-weight: bold;
+    line-height: 1;
+    font-weight: 800;
+    text-align: center;
+    font-family: var(--font-heading);
+    letter-spacing: -1px;
 }
 
 .hero-description .line {
     display: block;
 }
 
-.line1 {
-    margin-left: -20px;
-}
-
-.line2 {
-    margin-left: 50px;
-}
-
+.line1,
+.line2,
 .line3 {
-    margin-left: 100px;
+    margin-left: 0;
 }
 
-/* Sección Herramientas */
-.tools-section {
-    padding: 50px 5%;
-}
 
-.tools-section h2 {
-    color: #1a237e;
-    margin-bottom: 25px;
-    font-size: 1.8rem;
-}
 
 .tools-grid {
     display: grid;
@@ -176,9 +276,9 @@ body {
 .logo-main {
     font-size: 26px;
     font-weight: 800;
-    color: #1a237e;
-    /* azul corporativo */
+    color: var(--brand-blue-light);
     letter-spacing: 1px;
+    font-family: var(--font-heading);
 }
 
 .logo-sub {
@@ -187,14 +287,31 @@ body {
     color: #555;
     letter-spacing: 4px;
     margin-top: 4px;
+    font-family: var(--font-main);
 }
 
 /* Sección Conocenos */
 .hero-image-branding {
     width: 45%;
-    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
     position: relative;
-    background: #000;
+    background: var(--brand-blue);
+    overflow: hidden;
+    z-index: 2;
+}
+
+.hero-image-branding img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    /* Ensure subject is centered */
+    transition: transform 0.6s ease;
+    display: block;
+}
+
+.hero-image-branding:hover img {
+    transform: scale(1.1);
 }
 
 .carousel {
@@ -212,6 +329,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     position: absolute;
     top: 0;
     left: 0;
@@ -238,11 +356,12 @@ body {
 }
 
 .container-text h2 {
-    color: #1a237e;
+    color: var(--brand-blue-light);
     margin-bottom: 30px;
     font-size: 2.5rem;
     position: relative;
     display: inline-block;
+    font-family: var(--font-heading);
 }
 
 .container-text h2::after {
@@ -250,7 +369,7 @@ body {
     display: block;
     width: 60px;
     height: 4px;
-    background: #c76718;
+    background: var(--brand-orange);
     margin: 10px auto 0;
 }
 
@@ -315,12 +434,20 @@ body {
     justify-content: center;
     font-size: 3rem;
     color: #ccc;
+    overflow: hidden;
 }
 
 .service-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s ease;
+    display: block;
+}
+
+.service-card:hover .service-img img {
+    transform: scale(1.1);
 }
 
 .service-content {
@@ -338,7 +465,6 @@ body {
     line-height: 1.6;
 }
 
-/* Contacto Layout */
 .contact-container {
     display: flex;
     gap: 50px;
@@ -370,6 +496,17 @@ body {
     justify-content: center;
     color: #0091ea;
     font-size: 1.2rem;
+}
+
+.social-link {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: #0091ea;
+    text-decoration: underline;
 }
 
 .form-group {
@@ -422,5 +559,240 @@ body {
 
 .careers-image img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     display: block;
+    transition: transform 0.6s ease;
+}
+
+.careers-image:hover img {
+    transform: scale(1.1);
+}
+
+/* Footer Styles */
+.main-footer {
+    padding: 20px 0;
+    text-align: center;
+    background-color: transparent;
+    margin-top: 40px;
+}
+
+/* Footer Styles */
+.footer-text {
+    background-color: #1a237e;
+    /* Azul corporativo */
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Google Maps Embed */
+.careers-image iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    border: 0;
+    display: block;
+    /* Removes bottom spacing/gap */
+}
+
+/* Capacidad Operativa Section */
+.operational-capacity {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.capacity-card {
+    background: transparent;
+    text-align: left;
+}
+
+.capacity-img-container {
+    width: 100%;
+    height: 250px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background-color: #eee;
+}
+
+.capacity-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.capacity-card:hover .capacity-img-container img {
+    transform: transform 0.5s ease;
+    transform: scale(1.05);
+}
+
+.capacity-card h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-family: var(--font-heading);
+    letter-spacing: 0.5px;
+}
+
+.capacity-separator {
+    width: 50px;
+    height: 4px;
+    background-color: var(--brand-orange);
+    margin-bottom: 20px;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+}
+
+.whatsapp-float svg {
+    width: 35px;
+    height: 35px;
+    fill: white;
+}
+
+/* =========================================
+   TIMELINE SECTION STYLES
+   ========================================= */
+
+.main-timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+/* The Central Road */
+.timeline-road {
+    position: absolute;
+    width: 16px; /* Wider road */
+    background-color: #343a40; /* Asphalt color */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -8px; /* Center it */
+    border-radius: 8px; /* Ends of the road */
+    z-index: 1;
+    overflow: hidden; /* Keep dashes inside */
+}
+
+/* The White Center Line Dashes */
+.timeline-road::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.9) 0,
+        rgba(255, 255, 255, 0.9) 15px,
+        transparent 15px,
+        transparent 30px
+    );
+}
+
+/* Timeline Item Container */
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px 40px;
+    z-index: 2; /* Content above road if overlaps, though side-by-side usually */
+}
+
+.left-item {
+    left: 0;
+    text-align: right; /* Text aligns to center */
+}
+
+.right-item {
+    left: 50%;
+    text-align: left;
+}
+
+/* Connector Line (Point from road to card) */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 40px; /* Align with top of card roughly */
+    width: 20px;
+    height: 4px;
+    background-color: #c76718; /* Or asphalt? Let's use Orange for visibility */
+    z-index: 10;
+}
+
+.left-item::before {
+    right: 20px; /* Connect to road */
+}
+
+.right-item::before {
+    left: 20px; /* Connect to road */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 767px) {
+    .timeline-road {
+        left: 30px; /* Move road to left */
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px; /* Make space for road */
+        padding-right: 20px;
+    }
+
+    .left-item, .right-item {
+        left: 0;
+        text-align: left; /* Reset alignment */
+    }
+
+    .left-item::before, .right-item::before {
+        left: 45px; /* Adjust connector */
+        width: 25px;
+        right: auto;
+    }
+}
+
+/* Animation Classes */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
 }

@@ -4,11 +4,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schalbetter Transportes | Transporte y Logística</title>
+
+    <!-- SEO Meta Tags -->
+    <title>Schalbetter Transportes | Logística Nacional e Internacional</title>
+    <meta name="description"
+        content="Empresa de transporte de cargas generales y logística internacional en Argentina, Chile, Uruguay y Bolivia. +20 años de experiencia. ¡Solicitá tu cotización!">
+    <meta name="keywords"
+        content="Transporte de cargas generales, Logística internacional Argentina Chile Bolivia Uruguay, Transporte pesado Santa Fe">
+    <meta name="author" content="Schalbetter Transportes">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://matecito-tech.github.io/SchalbetterTransportes/">
+    <meta property="og:title" content="Schalbetter Transportes | Logística Nacional e Internacional">
+    <meta property="og:description"
+        content="Expertos en transporte de carga. Cobertura en Argentina, Chile, Uruguay y Bolivia.">
+    <meta property="og:image" content="https://matecito-tech.github.io/SchalbetterTransportes/public/camion.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://matecito-tech.github.io/SchalbetterTransportes/">
+    <meta property="twitter:title" content="Schalbetter Transportes | Logística Nacional e Internacional">
+    <meta property="twitter:description"
+        content="Expertos en transporte de carga. Cobertura en Argentina, Chile, Uruguay y Bolivia.">
+    <meta property="twitter:image" content="https://matecito-tech.github.io/SchalbetterTransportes/public/camion.webp">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TruckingBusiness",
+      "name": "Schalbetter Transportes",
+      "image": "https://matecito-tech.github.io/SchalbetterTransportes/public/camion.webp",
+      "@id": "https://matecito-tech.github.io/SchalbetterTransportes/",
+      "url": "https://matecito-tech.github.io/SchalbetterTransportes/",
+      "telephone": "+54 9 3406 46-3888",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Dr. D'Alfonso 678",
+        "addressLocality": "San Martín de las Escobas",
+        "addressRegion": "Santa Fe",
+        "postalCode": "S2449",
+        "addressCountry": "AR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -31.8596737,
+        "longitude": -61.5702158
+      },
+      "areaServed": [
+        "Argentina",
+        "Chile",
+        "Uruguay",
+        "Bolivia"
+      ],
+      "sameAs": [
+        "https://www.facebook.com/p/Schalbetter-Transportes-100071819709414/",
+        "https://www.instagram.com/schalbetter_transportes/"
+      ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@400;700&display=swap"
         rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -22,89 +85,55 @@
                 <span class="logo-sub">TRANSPORTES</span>
             </div>
 
-            <button class="menu-toggle" aria-label="Abrir menú">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
+
 
             <ul class="nav-links">
                 <li><a href="#inicio">INICIO</a></li>
-                <li><a href="#conocenos">CONÓCENOS</a></li>
+                <li><a href="#conocenos">CONOCENOS</a></li>
                 <li><a href="#servicios">NUESTROS SERVICIOS</a></li>
                 <li><a href="#contacto">CONTACTO</a></li>
-                <li><a href="#trabaja">TRABAJA CON NOSOTROS</a></li>
+                <li><a href="#trabaja">TRABAJÁ CON NOSOTROS</a></li>
             </ul>
             <div class="user-menu">
-                <span class="client-btn">Área clientes</span>
             </div>
         </nav>
     </header>
 
     <!-- SECCIÓN 1: INICIO/HOME -->
     <section id="inicio" class="page-section">
-        <section class="hero">
-            <div class="hero-image">
-                <img src="public/logo.png" alt="Logo">
-            </div>
-            <div class="hero-content">
-                <div class="hero-text-wrapper">
-                    <span class="hero-bullet"></span>
-                    <p class="hero-description">
-                        <span class="line line1">RECORRIENDO</span>
-                        <span class="line line2">NUEVOS</span>
-                        <span class="line line3">CAMINOS.</span>
-                    </p>
-                </div>
+        <section class="home-banner">
+            <div class="hero-overlay"></div>
+            <div class="main-hero-content">
+                <h1>RECORRIENDO NUEVOS CAMINOS.</h1>
+                <a href="https://wa.me/5493406463888?text=%C2%A1Hola!%20Vi%20su%20sitio%20web%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20transporte."
+                    target="_blank" class="cta-button">SOLICITÁ TU COTIZACIÓN</a>
             </div>
         </section>
 
-        <section class="tools-section">
-            <h2>Herramientas</h2>
-            <div class="tools-grid">
-                <div class="tool-card">
-                    <div class="icon">🔍</div>
-                    <p>SEGUIMIENTO DE ENVÍOS</p>
-                </div>
-                <div class="tool-card">
-                    <div class="icon">💰</div>
-                    <p>COTIZACIÓN ONLINE</p>
-                </div>
-                <div class="tool-card">
-                    <div class="icon">📍</div>
-                    <p>BUSCADOR DE LOCALIDADES</p>
-                </div>
-                <div class="tool-card">
-                    <div class="icon">🚚</div>
-                    <p>SOLICITUD DE RETIROS</p>
-                </div>
-                <div class="tool-card">
-                    <div class="icon">🏢</div>
-                    <p>BUSCADOR DE SUCURSALES</p>
-                </div>
-            </div>
-        </section>
+
     </section>
 
-    <!-- SECCIÓN 2: CONÓCENOS -->
     <section id="conocenos" class="page-section">
         <section class="hero">
             <div class="hero-image-branding">
                 <div class="carousel">
                     <div class="carousel-inner">
-                        <img src="public/hernanyariel.jpeg" alt="Instalaciones Schalbetter" class="carousel-item">
-                        <img src="public/camion.jpeg" alt="Flota de camiones" class="carousel-item">
-                        <img src="public/ganador.jpg" alt="Equipo de trabajo" class="carousel-item">
+                        <img src="public/hernanyariel.webp" alt="Equipo de Schalbetter Transportes"
+                            class="carousel-item">
+                        <img src="public/camion.webp" alt="Camión de carga general Schalbetter Transportes"
+                            class="carousel-item">
+                        <img src="public/ganador.webp" alt="Reconocimiento al equipo Schalbetter" class="carousel-item">
                     </div>
                 </div>
             </div>
             <div class="hero-content">
                 <div class="hero-text-wrapper">
-                    <div class="hero-description">
+                    <span class="hero-bullet"></span>
+                    <p class="hero-description">
                         <span class="line line1">NUESTRA</span>
                         <span class="line line2">HISTORIA Y</span>
                         <span class="line line3">PASIÓN.</span>
-                    </div>
+                    </p>
                 </div>
             </div>
         </section>
@@ -112,38 +141,114 @@
         <section class="about-section">
             <div class="container-text">
                 <h2>¿Quiénes Somos?</h2>
-                <p class="text-format">
+                <p class="text-format lead">
                     Hace más de 20 años comenzamos a recorrer cada rincón del país, llevando sueños, productos e
-                    historias de un lugar a otro.
-
-                    Lo que empezó como un proyecto familiar, hoy cruza fronteras: hace más de 2 años nos expandimos a
-                    rutas internacionales, con la misma pasión de siempre.
-
-                    Nuestra flota está equipada, y nuestro equipo, comprometido.
-                    Entregamos en tiempo y forma, con la responsabilidad y honestidad que nos definen desde el primer
-                    kilómetro.
-
-                    Transportamos más que cargas: llevamos confianza en cada viaje.
+                    historias de un lugar a otro. Lo que empezó como un proyecto familiar, hoy cruza fronteras.
                 </p>
             </div>
 
-            <div class="tools-grid">
-                <div class="tool-card">
-                    <div class="icon">🎯</div>
-                    <p>MISIÓN</p>
-                    <span class="card-detail">Brindar soluciones logísticas integrales que superen las expectativas de
-                        tiempo y seguridad.</span>
+            <!-- TIMELINE SECTION START -->
+            <div class="container py-5">
+                <div class="main-timeline">
+                    <!-- Road Line -->
+                    <div class="timeline-road"></div>
+
+                    <!-- Milestone 1 -->
+                    <div class="timeline-item left-item fade-in-up">
+                        <div class="timeline-content">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <span class="badge bg-secondary mb-2">2004</span>
+                                    <h4 class="card-title text-primary fw-bold">El KM 0</h4>
+                                    <p class="card-text text-muted">Todo comenzó como un proyecto familiar, con un solo
+                                        camión y una visión clara: trabajar con honestidad y responsabilidad en cada
+                                        entrega.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 2 -->
+                    <div class="timeline-item right-item fade-in-up">
+                        <div class="timeline-content">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <span class="badge bg-primary mb-2">Consolidación</span>
+                                    <h4 class="card-title text-primary fw-bold">Crecimiento Nacional</h4>
+                                    <p class="card-text text-muted">Nuestra flota creció y nuestro equipo se fortaleció,
+                                        logrando una cobertura total en Argentina con la misma pasión del primer día.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 3 -->
+                    <div class="timeline-item left-item fade-in-up">
+                        <div class="timeline-content">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <span class="badge bg-warning text-dark mb-2">2024</span>
+                                    <h4 class="card-title text-primary fw-bold">Cruzando Fronteras</h4>
+                                    <p class="card-text text-muted">La expansión no se detuvo. Llegamos a Chile, Uruguay
+                                        y Bolivia, llevando nuestra calidad de servicio a nivel internacional.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 4 -->
+                    <div class="timeline-item right-item fade-in-up">
+                        <div class="timeline-content">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <span class="badge bg-success mb-2">Actualidad</span>
+                                    <h4 class="card-title text-primary fw-bold">Confianza en Movimiento</h4>
+                                    <p class="card-text text-muted">Hoy, con tecnología GPS y un equipo comprometido,
+                                        transportamos más que cargas: llevamos confianza en cada viaje.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="tool-card orange-bg">
-                    <div class="icon">👁️</div>
-                    <p>VISIÓN</p>
-                    <span class="card-detail">Ser la empresa líder en transporte nacional, reconocida por nuestra
-                        innovación y calidad humana.</span>
+            </div>
+            <!-- TIMELINE SECTION END -->
+
+            <div class="container-text mt-5">
+                <h2>¿Por qué elegirnos?</h2>
+            </div>
+
+            <div class="operational-capacity">
+                <div class="capacity-card">
+                    <div class="capacity-img-container">
+                        <img src="public/camion.webp" alt="Flota Moderna de Camiones Schalbetter">
+                    </div>
+                    <h3>PERSONAL CAPACITADO</h3>
+                    <div class="capacity-separator"></div>
+                    <p>Nuestro equipo cuenta con años de experiencia y capacitación constante para garantizar el mejor
+                        servicio en cada ruta.</p>
                 </div>
-                <div class="tool-card navy-bg">
-                    <div class="icon">🤝</div>
-                    <p>VALORES</p>
-                    <span class="card-detail">Integridad, puntualidad y respeto por la carga y el camino.</span>
+
+                <div class="capacity-card">
+                    <div class="capacity-img-container">
+                        <img src="public/paises.png"
+                            alt="Cobertura Internacional en Argentina, Chile, Uruguay y Bolivia"
+                            style="object-fit: contain;">
+                    </div>
+                    <h3>SERVICIO INTERNACIONAL</h3>
+                    <div class="capacity-separator"></div>
+                    <p>Realizamos transportes dentro del territorio nacional, así como a Uruguay, Bolivia, Chile y
+                        Brasil.</p>
+                </div>
+
+                <div class="capacity-card">
+                    <div class="capacity-img-container">
+                        <img src="public/hernanyariel.webp" alt="Personal Calificado de Schalbetter Transportes">
+                    </div>
+                    <h3>SEGURIDAD Y TECNOLOGÍA</h3>
+                    <div class="capacity-separator"></div>
+                    <p>Nuestras unidades cuentan con seguimiento satelital 24/7 para asegurar que tu carga llegue segura
+                        a destino.</p>
                 </div>
             </div>
         </section>
@@ -153,16 +258,16 @@
     <section id="servicios" class="page-section">
         <section class="hero">
             <div class="hero-image-branding">
-                <img src="public/camion.jpeg" alt="Nuestros Servicios"
-                    style="width:100%; height:100%; object-fit:cover;">
+                <img src="public/camion.webp" alt="Nuestros Servicios de Transporte y Logística">
             </div>
             <div class="hero-content">
                 <div class="hero-text-wrapper">
-                    <div class="hero-description">
+                    <span class="hero-bullet"></span>
+                    <p class="hero-description">
                         <span class="line line1">SOLUCIONES</span>
                         <span class="line line2">LOGÍSTICAS</span>
                         <span class="line line3">A TU MEDIDA.</span>
-                    </div>
+                    </p>
                 </div>
             </div>
         </section>
@@ -178,23 +283,25 @@
                     <div class="service-img">🚚</div>
                     <div class="service-content">
                         <h3>Cargas Generales</h3>
-                        <p>Transporte de mercancías a todo el país con unidades modernas y seguras, garantizando la
-                            integridad de su carga.</p>
+                        <p>Transporte de mercancías de alcance nacional e internacional, con unidades modernas y
+                            seguras, garantizando la
+                            integridad de su carga mediante sistema de seguimiento satelital.</p>
                     </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-img">❄️</div>
+                    <div class="service-img">⚠️</div>
                     <div class="service-content">
-                        <h3>Cadena de Frío</h3>
-                        <p>Unidades refrigeradas de última generación para el transporte de alimentos y productos
-                            farmacéuticos.</p>
+                        <h3>Mercaderías Peligrosas</h3>
+                        <p>Gestión segura y certificada de materiales riesgosos bajo estrictas normativas
+                            internacionales.</p>
                     </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-img">📦</div>
+                    <div class="service-img">🚜</div>
                     <div class="service-content">
-                        <h3>Paquetería Express</h3>
-                        <p>Servicio puerta a puerta para pequeñas y medianas encomiendas con seguimiento en tiempo real.
+                        <h3>Transporte de Maquinaria Agrícola</h3>
+                        <p>Traslado eficiente de maquinaria pesada y equipos agrícolas hacia cualquier punto de
+                            producción.
                         </p>
                     </div>
                 </div>
@@ -206,66 +313,98 @@
     <section id="contacto" class="page-section">
         <section class="hero">
             <div class="hero-image-branding">
-                <img src="public/banner.jpg" alt="Contacto" style="width:100%; height:100%; object-fit:cover;">
+                <img src="public/banner.webp" alt="Contacto Schalbetter Transportes">
             </div>
             <div class="hero-content">
                 <div class="hero-text-wrapper">
-                    <div class="hero-description">
+                    <span class="hero-bullet"></span>
+                    <p class="hero-description">
                         <span class="line line1">ESTAMOS</span>
-                        <span class="line line2">AQUÍ PARA</span>
+                        <span class="line line2">PARA</span>
                         <span class="line line3">AYUDARTE.</span>
-                    </div>
+                    </p>
                 </div>
             </div>
         </section>
 
         <section class="about-section">
             <div class="container-text">
-                <h2>Contáctanos</h2>
+                <h2>Contactanos</h2>
                 <p class="text-format">Estamos a su disposición para resolver cualquier duda o cotizar su próximo envío.
                 </p>
             </div>
             <div class="contact-container">
+
                 <div class="contact-info">
                     <div class="info-item">
                         <div class="info-icon">📍</div>
                         <div>
-                            <h3>Nuestra Base</h3>
-                            <p>Ruta Nacional 12, Km 1000<br>Corrientes, Argentina</p>
+                            <h3>Nuestras oficinas</h3>
+                            <p>Dr. D'Alfonso 678<br>
+                                2449 - San Martín de Las Escobas <br>
+                                Santa Fe, Argentina</p>
                         </div>
                     </div>
                     <div class="info-item">
                         <div class="info-icon">📞</div>
                         <div>
-                            <h3>Teléfonos</h3>
-                            <p>+54 379 4123-4567<br>+54 379 4987-6543</p>
+                            <h3>Teléfono</h3>
+                            <p>03406 498708</p>
                         </div>
                     </div>
                     <div class="info-item">
                         <div class="info-icon">✉️</div>
                         <div>
                             <h3>Correo Electrónico</h3>
-                            <p>info@schalbetter.com.ar<br>ventas@schalbetter.com.ar</p>
+                            <p>schalbettertransportes@hotmail.com.ar</p>
                         </div>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Nombre completo" required>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon" style="color: #25D366;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                            </svg>
                         </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Correo electrónico" required>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p><a href="https://wa.me/5493406463888?text=%C2%A1Hola!%20Vengo%20desde%20el%20sitio%20web.%20Tengo%20una%20consulta%20sobre%20sus%20servicios."
+                                    target="_blank" class="social-link"> +54 9 3406
+                                    46-3888</a></p>
                         </div>
-                        <div class="form-group">
-                            <input type="tel" placeholder="Teléfono">
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon" style="color: #1877F2;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
                         </div>
-                        <div class="form-group">
-                            <textarea rows="5" placeholder="¿En qué podemos ayudarte?" required></textarea>
+                        <div>
+                            <h3>Facebook</h3>
+                            <p><a href="https://www.facebook.com/p/Schalbetter-Transportes-100071819709414/"
+                                    target="_blank" class="social-link">Schalbetter
+                                    Transportes</a></p>
                         </div>
-                        <button type="button" class="submit-btn" onclick="alert('Mensaje enviado (demo)')">ENVIAR
-                            MENSAJE</button>
-                    </form>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon" style="color: #E4405F;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Instagram</h3>
+                            <p><a href="https://www.instagram.com/schalbetter_transportes/" target="_blank"
+                                    class="social-link">@schalbetter_transportes</a></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -275,16 +414,16 @@
     <section id="trabaja" class="page-section">
         <section class="hero">
             <div class="hero-image-branding">
-                <img src="public/ganador.jpg" alt="Trabaja con nosotros"
-                    style="width:100%; height:100%; object-fit:cover;">
+                <img src="public/camionnieve.jpg" alt="Trabajá con nosotros en Schalbetter Transportes">
             </div>
             <div class="hero-content">
                 <div class="hero-text-wrapper">
-                    <div class="hero-description">
+                    <span class="hero-bullet"></span>
+                    <p class="hero-description">
                         <span class="line line1">CRECE</span>
                         <span class="line line2">CON</span>
                         <span class="line line3">NOSOTROS.</span>
-                    </div>
+                    </p>
                 </div>
             </div>
         </section>
@@ -311,14 +450,17 @@
                             seguridad.</li>
                     </ul>
                     <div style="margin-top: 40px;">
-                        <p style="margin-bottom: 15px; font-weight: bold;">Envíanos tu CV a:</p>
-                        <a href="mailto:rrhh@schalbetter.com.ar" class="submit-btn"
-                            style="text-decoration: none; display: inline-block;">rrhh@schalbetter.com.ar</a>
+                        <p style="margin-bottom: 15px; font-weight: bold;">¿Listo para trabajar con nosotros?</p>
+                        <a href="https://forms.gle/PeKt7oB952WgYo6B9" target="_blank" class="submit-btn"
+                            style="text-decoration: none; display: inline-block;">Postulate acá</a>
                     </div>
                 </div>
-                <div class="careers-image">
-                    <img src="public/hernanyariel.jpeg" style="width: 100%; height: auto; display: block;"
-                        alt="Nuestro Equipo">
+                <div class="careers-image map-container">
+                    <iframe
+                        src="https://maps.google.com/maps?q=Dr.%20D'Alfonso%20678%2C%20San%20Mart%C3%ADn%20de%20Las%20Escobas%2C%20Santa%20Fe&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
         </section>
@@ -326,24 +468,29 @@
 
     <!-- FOOTER -->
     <footer class="main-footer">
-        <p>&copy; 2026 Schalbetter Transportes - Recorriendo nuevos caminos.</p>
+        <p><span class="footer-text">&copy; 2026 Schalbetter Transportes - Desarrollado por <a
+                    href="https://matecito-tech.github.io/website/" target="_blank"
+                    style="color: #ffffff; text-decoration: none; font-weight: bold;">Matecito Tech 🧉</a>.</span></p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
     <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
 
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
 
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
+
     </script>
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/5493406463888?text=%C2%A1Hola!%20Quisiera%20pedir%20un%20presupuesto%20para%20un%20transporte."
+        class="whatsapp-float" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="white">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+    </a>
+
 </body>
 
 </html>
