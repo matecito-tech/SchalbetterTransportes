@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://matecito-tech.github.io/SchalbetterTransportes/sitemap.xml
