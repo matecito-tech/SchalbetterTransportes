@@ -682,3 +682,117 @@ body {
     height: 35px;
     fill: white;
 }
+
+/* =========================================
+   TIMELINE SECTION STYLES
+   ========================================= */
+
+.main-timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+/* The Central Road */
+.timeline-road {
+    position: absolute;
+    width: 16px; /* Wider road */
+    background-color: #343a40; /* Asphalt color */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -8px; /* Center it */
+    border-radius: 8px; /* Ends of the road */
+    z-index: 1;
+    overflow: hidden; /* Keep dashes inside */
+}
+
+/* The White Center Line Dashes */
+.timeline-road::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.9) 0,
+        rgba(255, 255, 255, 0.9) 15px,
+        transparent 15px,
+        transparent 30px
+    );
+}
+
+/* Timeline Item Container */
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px 40px;
+    z-index: 2; /* Content above road if overlaps, though side-by-side usually */
+}
+
+.left-item {
+    left: 0;
+    text-align: right; /* Text aligns to center */
+}
+
+.right-item {
+    left: 50%;
+    text-align: left;
+}
+
+/* Connector Line (Point from road to card) */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 40px; /* Align with top of card roughly */
+    width: 20px;
+    height: 4px;
+    background-color: #c76718; /* Or asphalt? Let's use Orange for visibility */
+    z-index: 10;
+}
+
+.left-item::before {
+    right: 20px; /* Connect to road */
+}
+
+.right-item::before {
+    left: 20px; /* Connect to road */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 767px) {
+    .timeline-road {
+        left: 30px; /* Move road to left */
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px; /* Make space for road */
+        padding-right: 20px;
+    }
+
+    .left-item, .right-item {
+        left: 0;
+        text-align: left; /* Reset alignment */
+    }
+
+    .left-item::before, .right-item::before {
+        left: 45px; /* Adjust connector */
+        width: 25px;
+        right: auto;
+    }
+}
+
+/* Animation Classes */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
