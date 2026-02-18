@@ -22,8 +22,6 @@ html {
 
 body {
     background-color: #f9f9f9;
-    padding-top: 85px;
-    /* Altura aproximada de la navbar */
 }
 
 /* Navegación */
@@ -76,8 +74,10 @@ body {
 }
 
 /* Sección Hero (Principal) */
-#inicio {
-    border-bottom: 30px solid #1a237e;
+
+/* Offset para navbar fija: todas las secciones */
+.page-section {
+    scroll-margin-top: 85px;
 }
 
 /* Sección Hero (Principal - Home Banner) */
@@ -811,4 +811,27 @@ body {
 .fade-in-up.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* =========================================
+   SCROLL REVEAL - Aparición al hacer scroll
+   ========================================= */
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Las secciones que no son inicio necesitan padding-top para no quedar tapadas por la navbar */
+#conocenos,
+#servicios,
+#contacto,
+#trabaja {
+    scroll-margin-top: -20px;
 }

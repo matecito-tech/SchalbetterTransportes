@@ -1,22 +1,45 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Intersection Observer for Timeline Animations
     const observerOptions = {
         root: null,
-        rootMargin: '0px',
-        threshold: 0.2 // Trigger when 20% of the item is visible
+        rootMargin: '0px 0px -60px 0px',
+        threshold: 0.12
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Animate once
+                obs.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    const timelineItems = document.querySelectorAll('.fade-in-up');
-    timelineItems.forEach(item => {
-        observer.observe(item);
+    // Elementos que ya tenían la clase (timeline)
+    document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+    // Selectores de contenido con delay escalonado POR GRUPO
+    const revealGroups = [
+        '.container-text h2',
+        '.container-text p',
+        '.text-format',
+        '.hero-description',
+        '.service-card',
+        '.capacity-card',
+        '.info-item',
+        '.careers-content h3',
+        '.careers-content ul',
+        '.careers-image',
+        '.footer-text',
+    ];
+
+    revealGroups.forEach(selector => {
+        document.querySelectorAll(selector).forEach((el, i) => {
+            if (!el.classList.contains('scroll-reveal') && !el.classList.contains('fade-in-up')) {
+                el.classList.add('scroll-reveal');
+                // Delay escalonado dentro del mismo grupo (máx 200ms)
+                el.style.transitionDelay = `${Math.min(i * 80, 200)}ms`;
+                observer.observe(el);
+            }
+        });
     });
 });
