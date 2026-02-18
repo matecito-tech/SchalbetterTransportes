@@ -22,8 +22,6 @@ html {
 
 body {
     background-color: #f9f9f9;
-    padding-top: 85px;
-    /* Altura aproximada de la navbar */
 }
 
 /* Navegación */
@@ -76,8 +74,10 @@ body {
 }
 
 /* Sección Hero (Principal) */
-#inicio {
-    border-bottom: 30px solid #1a237e;
+
+/* Offset para navbar fija: todas las secciones */
+.page-section {
+    scroll-margin-top: 85px;
 }
 
 /* Sección Hero (Principal - Home Banner) */
@@ -544,6 +544,7 @@ body {
     gap: 50px;
     max-width: 1100px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .careers-content {
@@ -695,15 +696,20 @@ body {
 /* The Central Road */
 .timeline-road {
     position: absolute;
-    width: 16px; /* Wider road */
-    background-color: #343a40; /* Asphalt color */
+    width: 16px;
+    /* Wider road */
+    background-color: #343a40;
+    /* Asphalt color */
     top: 0;
     bottom: 0;
     left: 50%;
-    margin-left: -8px; /* Center it */
-    border-radius: 8px; /* Ends of the road */
+    margin-left: -8px;
+    /* Center it */
+    border-radius: 8px;
+    /* Ends of the road */
     z-index: 1;
-    overflow: hidden; /* Keep dashes inside */
+    overflow: hidden;
+    /* Keep dashes inside */
 }
 
 /* The White Center Line Dashes */
@@ -715,13 +721,11 @@ body {
     transform: translateX(-50%);
     width: 4px;
     height: 100%;
-    background: repeating-linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0.9) 0,
-        rgba(255, 255, 255, 0.9) 15px,
-        transparent 15px,
-        transparent 30px
-    );
+    background: repeating-linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.9) 0,
+            rgba(255, 255, 255, 0.9) 15px,
+            transparent 15px,
+            transparent 30px);
 }
 
 /* Timeline Item Container */
@@ -729,12 +733,14 @@ body {
     position: relative;
     width: 50%;
     padding: 20px 40px;
-    z-index: 2; /* Content above road if overlaps, though side-by-side usually */
+    z-index: 2;
+    /* Content above road if overlaps, though side-by-side usually */
 }
 
 .left-item {
     left: 0;
-    text-align: right; /* Text aligns to center */
+    text-align: right;
+    /* Text aligns to center */
 }
 
 .right-item {
@@ -746,40 +752,50 @@ body {
 .timeline-item::before {
     content: '';
     position: absolute;
-    top: 40px; /* Align with top of card roughly */
+    top: 40px;
+    /* Align with top of card roughly */
     width: 20px;
     height: 4px;
-    background-color: #c76718; /* Or asphalt? Let's use Orange for visibility */
+    background-color: #c76718;
+    /* Or asphalt? Let's use Orange for visibility */
     z-index: 10;
 }
 
 .left-item::before {
-    right: 20px; /* Connect to road */
+    right: 20px;
+    /* Connect to road */
 }
 
 .right-item::before {
-    left: 20px; /* Connect to road */
+    left: 20px;
+    /* Connect to road */
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 767px) {
     .timeline-road {
-        left: 30px; /* Move road to left */
+        left: 30px;
+        /* Move road to left */
     }
 
     .timeline-item {
         width: 100%;
-        padding-left: 70px; /* Make space for road */
+        padding-left: 70px;
+        /* Make space for road */
         padding-right: 20px;
     }
 
-    .left-item, .right-item {
+    .left-item,
+    .right-item {
         left: 0;
-        text-align: left; /* Reset alignment */
+        text-align: left;
+        /* Reset alignment */
     }
 
-    .left-item::before, .right-item::before {
-        left: 45px; /* Adjust connector */
+    .left-item::before,
+    .right-item::before {
+        left: 45px;
+        /* Adjust connector */
         width: 25px;
         right: auto;
     }
@@ -795,4 +811,27 @@ body {
 .fade-in-up.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* =========================================
+   SCROLL REVEAL - Aparición al hacer scroll
+   ========================================= */
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Las secciones que no son inicio necesitan padding-top para no quedar tapadas por la navbar */
+#conocenos,
+#servicios,
+#contacto,
+#trabaja {
+    scroll-margin-top: -20px;
 }
