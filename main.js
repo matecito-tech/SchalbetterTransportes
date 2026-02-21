@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
         '.careers-content h3',
         '.careers-content ul',
         '.careers-image',
-        '.footer-text',
     ];
 
     revealGroups.forEach(selector => {
@@ -42,4 +41,30 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // --- Mobile Menu Toggle ---
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    const navItems = document.querySelectorAll('.nav-links li a');
+
+    if (mobileBtn && navLinks) {
+        // Toggle menu Open/Close
+        mobileBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+            mobileBtn.classList.toggle('active');
+
+            // Update aria-expanded for accessibility
+            const isExpanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+            mobileBtn.setAttribute('aria-expanded', !isExpanded);
+        });
+
+        // Close menu when a link is clicked
+        navItems.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('nav-active');
+                mobileBtn.classList.remove('active');
+                mobileBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
 });
