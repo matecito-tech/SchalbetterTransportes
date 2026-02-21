@@ -50,6 +50,7 @@ body {
     display: flex;
     list-style: none;
     gap: 25px;
+    align-items: center;
 }
 
 .nav-links a {
@@ -64,13 +65,133 @@ body {
     color: #0091ea;
 }
 
-.client-btn {
-    background: #eee;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 13px;
+/* --- Mobile Menu Button --- */
+.mobile-menu-btn {
+    display: none;
+    /* Hidden on desktop */
+    background: transparent;
+    border: none;
     cursor: pointer;
-    font-weight: bold;
+    padding: 10px;
+    z-index: 1001;
+    /* Above mobile menu */
+}
+
+.hamburger-box {
+    width: 30px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+}
+
+.hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    width: 30px;
+    height: 3px;
+    background-color: var(--brand-blue);
+    border-radius: 4px;
+    position: absolute;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+    content: "";
+    display: block;
+}
+
+.hamburger-inner::before {
+    top: -8px;
+}
+
+.hamburger-inner::after {
+    bottom: -8px;
+}
+
+/* Active Hamburger State (Menu Open) */
+.mobile-menu-btn.active .hamburger-inner {
+    background-color: transparent;
+}
+
+.mobile-menu-btn.active .hamburger-inner::before {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-btn.active .hamburger-inner::after {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* --- Responsive Navbar Rules --- */
+@media (max-width: 900px) {
+
+    /* Adjust breakpoint if necessary */
+    .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 20px;
+        min-height: 80px;
+    }
+
+    .logo-text {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        z-index: 1001;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1002;
+    }
+
+    .user-menu {
+        display: none;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        /* Adjusted for new navbar height if needed */
+        left: -100%;
+        /* Hidden off-screen by default */
+        width: 100%;
+        height: calc(100vh - 80px);
+        /* Full height minus navbar */
+        background-color: white;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 40px;
+        gap: 30px;
+        transition: left 0.4s ease-in-out;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    .nav-links.nav-active {
+        left: 0;
+        /* Slide in from left */
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+        /* Larger touch targets for mobile */
+    }
 }
 
 /* Sección Hero (Principal) */
