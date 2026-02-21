@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
         '.careers-content h3',
         '.careers-content ul',
         '.careers-image',
-        '.footer-text',
     ];
 
     revealGroups.forEach(selector => {
