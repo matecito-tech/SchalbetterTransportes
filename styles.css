@@ -208,7 +208,7 @@ body {
 .home-banner {
     display: flex;
     height: 750px;
-    background-image: url('public/bannercamion.jpg');
+    background-image: url('public/bannercamion.webp');
     background-size: cover;
     background-position: center;
     position: relative;
